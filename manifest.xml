@@ -1,0 +1,46 @@
+<package>
+    <description brief="mars_app">
+       DFKI Robot simulator application loader
+    </description>
+     <author>Malte Langosz and Team</author>
+	<maintainer>Malte Langosz/malte.langosz@dfki.de</maintainer>
+    <maintainer>Anna Born/anna.born@dfki.de</maintainer>
+    <license>BSD</license>
+
+    <depend package="tools/configmaps" />
+    <depend package="simulation/mars2/mars_core" />
+    <depend package="simulation/mars2/mars_interfaces" />
+    <depend package="simulation/mars2/mars_gui" />
+    <depend package="simulation/lib_manager" />
+    <depend package="simulation/gui_collection/lib_manager_gui"  optional="1"/>
+    <depend package="simulation/gui_collection/main_gui" optional="1"/>
+    <depend package="simulation/gui_collection/data_broker_gui" optional="1"/>
+    <depend package="simulation/gui_collection/cfg_manager_gui" optional="1"/>
+
+    <!-- this is temporary here -->
+    <depend package="simulation/mars2/envire_mars_ode_physics" />
+    <depend package="simulation/mars2/envire_mars_ode_collision" />
+    <depend package="simulation/mars2/envire_mars_graphics" />
+    <depend package="simulation/mars2/envire_mars_motors" />
+    <depend package="simulation/mars2/envire_mars_sensors" />
+    <depend package="simulation/mars2/mapex_mars_loader" />
+
+    <!--depend package="envire/envire_visualizer" /-->
+    <depend package="simulation/mars2/mars_graphics" />
+    <tags>needs_opt</tags>
+       <keywords>
+            <keyword>simulation</keyword>
+            <keyword>core</keyword>
+            <keyword>app</keyword>
+            <keyword>gui</keyword>
+    </keywords>
+
+    <stage>1</stage>
+    <use>multi project</use>
+    <activity>active</activity>
+
+    <classifiers>
+        <classifier>c++</classifier>
+        <classifier>library</classifier>
+    </classifiers>
+</package>
