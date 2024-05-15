@@ -23,7 +23,7 @@
     <depend package="simulation/mars2/envire_mars_graphics" />
     <depend package="simulation/mars2/envire_mars_motors" />
     <depend package="simulation/mars2/envire_mars_sensors" />
-    <depend package="simulation/mars2/mapex_mars_loader" />
+    <depend package="simulation/mars2/mars_scene_loader" />
 
     <!--depend package="envire/envire_visualizer" /-->
     <depend package="simulation/mars2/mars_graphics" />

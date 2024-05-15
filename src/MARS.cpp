@@ -224,7 +224,7 @@ namespace mars
                 libManager->loadLibrary("envire_mars_motors");
                 libManager->loadLibrary("envire_mars_sensors");
                 libManager->loadLibrary("envire_mars_graphics");
-                libManager->loadLibrary("mapex_mars_loader", NULL, true);
+                libManager->loadLibrary("mars_scene_loader", NULL, true);
             }
         }
 
