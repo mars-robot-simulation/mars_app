@@ -217,13 +217,13 @@ namespace mars
                     // libManager->loadLibrary("CameraGUI", nullptr, true);
                     // libManager->loadLibrary("PythonMars", nullptr, true);
                     // libManager->loadLibrary("data_broker_plotter2", nullptr, true);
+                    libManager->loadLibrary("envire_mars_graphics");
                 }
                 std::cout << "load envire plugins" << std::endl;
                 libManager->loadLibrary("envire_mars_ode_physics");
                 libManager->loadLibrary("envire_mars_ode_collision");
                 libManager->loadLibrary("envire_mars_motors");
                 libManager->loadLibrary("envire_mars_sensors");
-                libManager->loadLibrary("envire_mars_graphics");
                 libManager->loadLibrary("mars_scene_loader", nullptr, true);
             }
         }
