@@ -197,6 +197,7 @@ namespace mars
                 {
                     libManager->loadLibrary("main_gui");
                     libManager->loadLibrary("mars_gui");
+                    libManager->loadLibrary("mars_graphics");
                 }
             }
         }
@@ -268,7 +269,7 @@ namespace mars
 
 #ifndef NO_GUI
             mars::main_gui::MainGUI *mainGui = nullptr;
-            mainGui = libManager->getLibraryAs<mars::main_gui::MainGUI>("main_gui", true);
+            mainGui = libManager->getLibraryAs<mars::main_gui::MainGUI>("main_gui");
 
             // TODO: added graph visualizer for 3d view, it should be move later in other lib/plugin
             // graphVisualizer = std::make_shared<envire::viz::EnvireGraphVisualizer>();
@@ -279,7 +280,7 @@ namespace mars
             // mainGui->mainWindow_p()->setCentralWidget(graphVisualizer.get());
 
             mars::interfaces::GraphicsManagerInterface *marsGraphics = nullptr;
-            marsGraphics = libManager->getLibraryAs<mars::interfaces::GraphicsManagerInterface>("mars_graphics", true);
+            marsGraphics = libManager->getLibraryAs<mars::interfaces::GraphicsManagerInterface>("mars_graphics");
             if(marsGraphics)
             {
                 // init osg
