@@ -188,17 +188,19 @@ namespace mars
                 fprintf(stderr, "MARS::loadCoreLibs: load core libs from core_libs.txt\n");
                 fclose(plugin_config);
                 libManager->loadConfigFile(coreConfigFile);
-            } else
+            }
+            else
             {
                 fprintf(stderr, "MARS::loadCoreLibs: Loading default core libraries...\n");
-                libManager->loadLibrary("data_broker");
-                libManager->loadLibrary("mars_core");
                 if(!noGUI)
                 {
                     libManager->loadLibrary("main_gui");
                     libManager->loadLibrary("mars_gui");
                     libManager->loadLibrary("mars_graphics");
                 }
+
+                libManager->loadLibrary("data_broker");
+                libManager->loadLibrary("mars_core");
             }
         }
 
