@@ -10,11 +10,11 @@ namespace mars
         using mars::interfaces::GraphicsManagerInterface;
         using mars::interfaces::SimulatorInterface;
 
-        GraphicsTimer::GraphicsTimer(GraphicsManagerInterface *graphics_,
-                                     SimulatorInterface *sim_)
-            : graphics(graphics_), sim(sim_)
+        GraphicsTimer::GraphicsTimer(GraphicsManagerInterface* graphics_,
+                                     SimulatorInterface* sim_)
+            : graphics{graphics_}, sim{sim_}
         {
-            graphicsTimer = new QTimer();
+            graphicsTimer = new QTimer{this};
             connect(graphicsTimer, SIGNAL(timeout()), this, SLOT(timerEvent()));
             connect(this, SIGNAL(internalRun()), this, SLOT(runOnceInternal()),
                     Qt::QueuedConnection);
@@ -59,7 +59,8 @@ namespace mars
                 if(graphics)
                 {
                     graphics->draw();
-                } else
+                }
+                else
                 {
                     sim->finishedDraw();
                 }

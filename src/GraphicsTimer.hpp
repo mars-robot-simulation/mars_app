@@ -16,8 +16,8 @@ namespace mars
             Q_OBJECT;
 
         public:
-            GraphicsTimer(mars::interfaces::GraphicsManagerInterface *graphics_,
-                          mars::interfaces::SimulatorInterface *sim_);
+            GraphicsTimer(mars::interfaces::GraphicsManagerInterface* graphics_,
+                          mars::interfaces::SimulatorInterface* sim_);
 
             ~GraphicsTimer()
                 {
@@ -35,9 +35,9 @@ namespace mars
             void runOnceInternal(void);
 
         private:
-            QTimer *graphicsTimer;
-            mars::interfaces::GraphicsManagerInterface *graphics;
-            mars::interfaces::SimulatorInterface *sim;
+            QTimer* graphicsTimer;
+            mars::interfaces::GraphicsManagerInterface* graphics;
+            mars::interfaces::SimulatorInterface* sim;
             bool runFinished;
 
         }; // end of class GraphicsTimer
