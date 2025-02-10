@@ -247,6 +247,34 @@ namespace mars
 
             if(!initialized) init();
 
+            {
+                std::string otherConfigFile = configDir+"/lib_blacklist.txt";
+                LOG_ERROR("load %s", otherConfigFile.c_str());
+                FILE *plugin_config = fopen(otherConfigFile.c_str() , "r");
+                if(plugin_config)
+                {
+                    std::string lib_name;
+                    char lib_chars[255];
+                    //check every input line for a library to load and if one is found, try to load it
+                    while(fgets(lib_chars, 255, plugin_config)) {
+                        lib_name = lib_chars;
+                        // strip whitespaces from start and end of line
+                        size_t pos1 = lib_name.find_first_not_of(" \t\n\r");
+                        size_t pos2 = lib_name.find_last_not_of(" \t\n\r");
+                        if(pos1 == std::string::npos || pos2 == std::string::npos) {
+                            continue;
+                        }
+                        lib_name = lib_name.substr(pos1, pos2 - pos1 + 1);
+                        // ignore lines that start with #
+                        if(lib_name[0] != '#') {
+                            LOG_ERROR("add to blacklist: %s", lib_name.c_str());
+                            libManager->addToBlacklist(lib_name);
+                        }
+                    }
+                    fclose(plugin_config);
+                }
+            }
+
             if(handleLibraryLoading)
             {
                 loadCoreLibs();
