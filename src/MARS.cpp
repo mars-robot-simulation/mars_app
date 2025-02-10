@@ -70,7 +70,7 @@ namespace mars
         }
 
         MARS::MARS() : configDir(DEFAULT_CONFIG_DIR),
-                       libManager(new lib_manager::LibManager()),
+                       libManager(lib_manager::LibManager::getLibManagerSingelton()),
                        marsGui(nullptr), ownLibManager(true),
                        argConfDir(false) {
             needQApp = true;
