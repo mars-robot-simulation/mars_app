@@ -16,6 +16,7 @@
     <depend package="simulation/gui_collection/main_gui" optional="1"/>
     <depend package="simulation/gui_collection/data_broker_gui" optional="1"/>
     <depend package="simulation/gui_collection/cfg_manager_gui" optional="1"/>
+    <depend package="simulation/gui_collection/CameraGui" optional="1"/>
 
     <!-- this is temporary here -->
     <depend package="simulation/mars2/envire_mars_ode_physics" />
