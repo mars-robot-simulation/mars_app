@@ -77,6 +77,7 @@ namespace mars
             bool ownLibManager;
             bool argConfDir;
             bool initialized;
+            bool createMainWindow;
         };
 
     } // end of namespace app

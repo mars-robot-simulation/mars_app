@@ -164,16 +164,19 @@ namespace mars
                 cfg_manager::cfgPropertyStruct configPath, prefPath;
                 configPath = cfg->getOrCreateProperty("Config", "config_path",
                                                       configDir);
+                // load preferences
+                std::string loadFile = configDir + "/mars_Preferences.yaml";
+                cfg->loadConfig(loadFile.c_str());
+
                 prefPath = cfg->getOrCreateProperty("Preferences", "resources_path",
                                                     "");
                 if(prefPath.sValue == "")
                 {
                     prefPath.sValue = "";
                 }
+                createMainWindow = cfg->getOrCreateProperty("Preferences", "createMainWindow",
+                                                    true).bValue;
                 //cfg->setProperty(prefPath);
-                // load preferences
-                std::string loadFile = configDir + "/mars_Preferences.yaml";
-                cfg->loadConfig(loadFile.c_str());
             }
             initialized = true;
         }
@@ -316,7 +319,7 @@ namespace mars
             {
                 // init osg
                 //initialize graphicsFactory
-                if(mainGui)
+                if(mainGui && createMainWindow)
                 {
                     marsGraphics->initializeOSG(nullptr);
                     QWidget *widget = (QWidget*)marsGraphics->getQTWidget(1);
